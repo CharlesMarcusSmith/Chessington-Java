@@ -41,4 +41,11 @@ public final class Coordinates {
     public Coordinates plus(int rowDiff, int colDiff) {
         return new Coordinates(row + rowDiff, col + colDiff);
     }
+
+    public boolean coordsValid(Coordinates coords){
+        return coords.getRow() >= 0
+                && coords.getRow() <= 7
+                && coords.getCol() >= 0
+                && coords.getCol() <= 7;
+    }
 }

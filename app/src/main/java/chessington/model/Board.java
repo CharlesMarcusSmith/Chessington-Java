@@ -42,6 +42,7 @@ public class Board {
     }
 
     public void move(Coordinates from, Coordinates to) {
+        board[from.getRow()][from.getCol()].setFirstMoveMade();
         board[to.getRow()][to.getCol()] = board[from.getRow()][from.getCol()];
         board[from.getRow()][from.getCol()] = null;
     }
