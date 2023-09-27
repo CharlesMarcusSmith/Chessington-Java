@@ -15,6 +15,8 @@ public class Pawn extends AbstractPiece {
         List<Move> allowedMoves = new ArrayList<>();
         int rowDistanceAllowed = 1;
         int multiplier;  //Manipulate distance based on colour.
+        Coordinates[] diagonals = new Coordinates[2];
+
 
         if(!this.getFirstMoveMade()){
             rowDistanceAllowed = 2;
@@ -32,6 +34,14 @@ public class Pawn extends AbstractPiece {
             }
             else {
                 break;
+            }
+        }
+        diagonals[0] = from.plus(multiplier,1);
+        diagonals[1] = from.plus(multiplier,-1);
+        for (Coordinates diagonal : diagonals) {
+            if (diagonal.coordsValid(diagonal) && board.get(diagonal) != null && board.get(diagonal).getColour() != this.colour) {
+                Move move = new Move(from, diagonal);
+                allowedMoves.add(move);
             }
         }
         return allowedMoves;
