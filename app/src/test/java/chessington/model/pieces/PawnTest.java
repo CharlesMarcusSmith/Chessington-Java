@@ -42,7 +42,7 @@ public class PawnTest {
     }
 
     @Test
-    public void whitePawnCanMoveUpTwoSquaresIfNotMoved() {
+    public void whiteP  awnCanMoveUpTwoSquaresIfNotMoved() {
         // Arrange
         Board board = Board.empty();
         Piece pawn = new Pawn(PlayerColour.WHITE);
@@ -185,7 +185,7 @@ public class PawnTest {
     
     @Test
     public void whitePawnsCanCaptureDiagonally() {
-        // Arrange
+           // Arrange
         Board board = Board.empty();
         Piece pawn = new Pawn(PlayerColour.WHITE);
         Piece enemyPiece = new Rook(PlayerColour.BLACK);
